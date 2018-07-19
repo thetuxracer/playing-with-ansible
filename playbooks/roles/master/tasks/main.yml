@@ -1,0 +1,21 @@
+---
+#- hosts: master
+# remote_user: vagrant
+
+# - tasks:
+- name: install_apache2
+  package:
+    name: apache2
+    state: latest
+  tags: master
+- name: update_apache2_config_file
+  template:
+    src: roles/master/templates/httpd.j2
+    dest: /etc/httpd.conf
+  notify:
+  - restart_apache
+- name: enable_apache2
+  service:
+    name: apache2
+    state: started
+    enabled: yes

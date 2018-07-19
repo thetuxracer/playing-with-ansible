@@ -1,0 +1,6 @@
+---
+# nodes role
+
+- hosts: nodes
+  roles:
+    - { role: nodes }
