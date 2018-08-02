@@ -1,0 +1,10 @@
+Just fooling around with Ansible, trying to learn this stuff. A lot of this is
+similar to Chef.
+
+To kick this up:
+
+$ vagrant up
+$ ssh-copy-id vagrant@10.0.0.10 # do the same for 10.0.0.11, 12
+
+If you dont want to copy the ssh-keys, the production inventory shows how to
+let ansible know to ssh into the hosts
